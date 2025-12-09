@@ -1,41 +1,51 @@
 import  java.util.Scanner;
 public class CM02 {
+  static Scanner sc=new Scanner(System.in);
+  static int maks=100;
+  static String[] nama= new String[maks];
+  static int[] NIM= new int[maks];
+  static String[] prodi= new String[maks];
+  static String[] perusahaan= new String[maks];
+  static int[] semester= new int[maks];
+  static String[] status= new String[maks];
+  static int i=0;
   static void tampilan(){
-    Scanner sc=new Scanner(System.in);
     System.out.println("=== Sistem Pendaftaran Magang Mahasiswa ===");
     System.out.println("1. Tambah data magang");
-    System.out.println("2. Tampolkan semua pendaftar magang");
+    System.out.println("2. Tampilkan semua pendaftar magang");
     System.out.println("3. Cari pendaftar berdasarkan program study");
     System.out.println("4. Hitung jumlah pendaftar untuk setiap status");
     System.out.println("5. Keluar");
-    System.out.print("Pilih menu(1-5:" );
+    System.out.print("Pilih menu(1-5):" );
   }
-  static void data(){
-    Scanner sc=new Scanner(System.in);
+  static void data(int i){
     System.out.print("Nama mahasiswa: ");
-    String nama=sc.nextLine();
+    nama[i]=sc.nextLine();
     System.out.print("NIM: ");
-    int NIM=sc.nextInt();
+    NIM[i]=sc.nextInt();
+    sc.nextLine();
     System.out.print("Prodi: ");
-    String prodi=sc.nextLine();
+    prodi[i]=sc.nextLine();
     System.out.print("Perusahaan tujuan magang: ");
-    String perusahaan=sc.nextLine();
-    System.out.print("Semesster pengambilan magang: ");
-    int semester=sc.nextInt();
-    System.out.print("Status magang(diterima/menunggu/ditolak: )");
-    String status=sc.nextLine();
-    status=sc.nextLine();
+    perusahaan[i]=sc.nextLine();
+    System.out.print("Semester pengambilan magang: ");
+    semester[i]=sc.nextInt();
+    sc.nextLine();
+    System.out.print("Status magang(diterima/menunggu/ditolak): ");
+    status[i]=sc.nextLine();
     System.out.println("=================================================");
   }
   public static void main(String[] args) {
-    Scanner sc=new Scanner(System.in);
     do {
       tampilan();
       int a=sc.nextInt();
       if (a==5) {
         break;
       }else if (a==1) {
-        data();
+        data(i);
+        i++;
+      }else if (a==2) {
+        
       }
       sc.nextLine();
     } while (true);
