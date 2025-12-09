@@ -16,7 +16,7 @@ public class CM02 {
     System.out.println("3. Cari pendaftar berdasarkan program study");
     System.out.println("4. Hitung jumlah pendaftar untuk setiap status");
     System.out.println("5. Keluar");
-    System.out.print("Pilih menu(1-5):" );
+    System.out.print("Pilih menu(1-5): " );
   }
   static void data(int i){
     System.out.print("Nama mahasiswa: ");
@@ -39,6 +39,7 @@ public class CM02 {
     do {
       tampilan();
       int a=sc.nextInt();
+      sc.nextLine();
       if (a==5) {
         break;
       }else if (a==1) {
@@ -47,7 +48,6 @@ public class CM02 {
       }else if (a==2) {
         
       }
-      sc.nextLine();
     } while (true);
   }
 }
