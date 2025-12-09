@@ -10,6 +10,7 @@ public class CM02 {
   static String[] status= new String[maks];
   static int i=0;
   static void tampilan(){
+    System.out.println();
     System.out.println("=== Sistem Pendaftaran Magang Mahasiswa ===");
     System.out.println("1. Tambah data magang");
     System.out.println("2. Tampilkan semua pendaftar magang");
@@ -35,6 +36,16 @@ public class CM02 {
     status[i]=sc.nextLine();
     System.out.println("=================================================");
   }
+  static void printSemua(){
+    if (i==0) {
+      System.out.println("Belum ada pendaftar");
+      return;
+    }
+    System.out.printf("%-4s %-20s %-13s %-25s %-20s %-10s %-10s%n", "No", "Nama", "NIM", "Prodi", "Perusahaan", "Semester", "status");
+    for(int j=0; j<i; j++){
+      System.out.printf("%-4d %-20s %-13d %-25s %-20s %-10d %-10s%n", (j+1), nama[j], NIM[j], prodi[j], perusahaan[j], semester[j], status[j]);
+    }
+  }
   public static void main(String[] args) {
     do {
       tampilan();
@@ -46,7 +57,7 @@ public class CM02 {
         data(i);
         i++;
       }else if (a==2) {
-        
+        printSemua();
       }
     } while (true);
   }
